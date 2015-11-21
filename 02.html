@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+            <meta charset="UTF-8">
+	<title>02</title>
+	<script src="./node_modules/angular/angular.js"></script>
+	<script src="./node_modules/angular-animate/angular-animate.js"></script>
+	<script type="text/javascript">
+	var app = angular.module('myApp',['ngAnimate']);
+	app.controller("SecondCtrl", function($scope){
+		$scope.names = [
+						{name: 'a乔乐', age:'25'},
+						{name: 'b周迅', age:'40'},
+						{name: 'c魏瑞', age:'25'},
+						{name: 'd展昭', age:'98'}
+						];
+	});
+
+	</script>
+	<style type="text/css">
+.animate-repeat {
+  line-height:40px;
+  list-style:none;
+  box-sizing:border-box;
+}
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:40px;
+}
+	</style>
+</head>
+<body>
+<div>
+模块Module：
+<input type="text" ng-model="nameText" placeholder="输入过滤信息..." />
+<ul ng-controller="SecondCtrl">
+	<li class="animate-repeat"  ng-repeat="info in names | filter:nameText">{{$index+1}}、今年{{info.name}}已经{{info.age}}岁了！ {{$first}}-{{$middle}}-{{$last}}-{{$even}}-{{$odd}}</li>
+</ul>
+</div>
+
+</body>
+
+</html>

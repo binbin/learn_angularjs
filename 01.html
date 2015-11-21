@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+           <meta charset="UTF-8">
+	<title>01</title>
+	<script type="text/javascript" src="./resources/angular/angular.min.js"></script>
+</head>
+<body>
+ 姓名：<input type="text" ng-model="name">
+<br>
+性别：<input type="radio" name="sex" value="男" ng-model="sex">男
+      <input type="radio" name="sex" value="女" ng-model="sex">女
+<br>
+兴趣：<input type="checkbox" name="interest" value="游泳" ng-model="interest">游泳
+      <input type="checkbox" name="interest" value="旅游" ng-model="interest">旅游
+      <input type="checkbox" name="interest" value="打篮球" ng-model="interest">打篮球
+<br><br>
+<fieldset>
+    <legend>{{name}}的基本信息如下：</legend>
+    <br>
+    性别：{{sex}}
+    <br>
+    兴趣爱好：{{interest}}
+</fieldset>
+</body>
+<script type="text/javascript">
+</script>
+</html>
